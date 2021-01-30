@@ -117,29 +117,29 @@
 
     <!--Thank You-->
 <script>
-
+// cost Calculation function
     function handlePriceChange(price,isIncrease){
 
         const inputNumber =document.getElementById(price +'-number');
-         const casCount=parseInt(inputNumber.value);
-         let caseNewCount=casCount;
+         const costCount=parseInt(inputNumber.value);
+         let costNewCount=costCount;
          if(isIncrease==true){
-             caseNewCount=casCount +1;
-         }if(isIncrease==false && casCount>0){
-            caseNewCount=casCount - 1;
+            costNewCount=costCount +1;
+         }if(isIncrease==false && costCount>0){
+            costNewCount=costCount - 1;
          }
-         inputNumber.value=caseNewCount;
+         inputNumber.value=costNewCount;
          let totalCost=0;
          if(price=='first'){
-             const totalCost=caseNewCount*150;
+             const totalCost=costNewCount*150;
          }if(price=='economy'){
-            const totalCost=caseNewCount*100;
+            const totalCost=costNewCount*100;
          }
 
          document.getElementById('price-total').innerText='$'+totalCost;
          calculatetotalCost()
     };
-
+// total cost Calculation function
     function calculatetotalCost(){
        const firstInput= document.getElementById('first-number');
        const firstCost=parseInt(firstInput.value);
